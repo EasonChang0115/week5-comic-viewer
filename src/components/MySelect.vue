@@ -26,6 +26,13 @@ export default {
       isVisible: false
     }
   },
+  mounted(){
+    window.addEventListener('mousedown',(e) => {
+      if(this.isVisible === true && e.target.classList[0] !== 'option') {
+        this.isVisible = false;
+      }
+    })
+  },
   methods: {
     switchOptions() {
       this.isVisible = !this.isVisible;

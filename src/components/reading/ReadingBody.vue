@@ -1,6 +1,10 @@
 <template>
   <div class="reading-body">
-    ReadingBody
+    <div class="comic-imgae">
+      <img width="100%" src="../../assets/images/chapter1/storyboard-1.png" alt="">
+    </div>
+    <div class="pre-button"><i class="fas fa-angle-left"></i></div>
+    <div class="next-button"><i class="fas fa-angle-right"></i></div>
   </div>
 </template>
 
