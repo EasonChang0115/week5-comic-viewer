@@ -2,11 +2,12 @@
   <div class="chapters">
     <div class="title2">All Chapters</div>
     <div class="chapter-box">
-      <div class="chapter" v-for="(chapter,index) in chapterLists" :key="index">
+      <router-link class="chapter" v-for="(chapter,index) in chapterLists" 
+      :key="index" :to="`/reading/${chapter.id}`">
         <div class="sub-title chapter-no">Chapter {{ index + 1 }}：</div>
         <div class="sub-title chapter-title">{{ chapter.title }}</div>
         <div v-if="chapter.isNew" class="sub-title chapter-new">NEW</div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -18,8 +19,8 @@ export default {
     return {
       msg: 'Chapters',
       chapterLists: [
-        {title: "The F2E Challenge Start!", isNew: false},
-        {title: "Todo List is Going Crazy!", isNew: true}
+        {id: 1, title: "The F2E Challenge Start!", isNew: false},
+        {id: 2, title: "Todo List is Going Crazy!", isNew: true}
       ]
     }
   }
