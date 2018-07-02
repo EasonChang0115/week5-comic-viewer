@@ -4,14 +4,8 @@
 
     <i class="fas fa-caret-right"></i>
 
-    <select class="chepter-select" name="" id="">
-      <option value="">chepter1</option>
-    </select>
-    <select class="page-select" name="" id="">
-      <option value="">page1</option>
-      <option value="">page2</option>
-      <option value="">page3</option>
-    </select>
+    <my-select :type="'chapter'" :optionList="chapters"></my-select>
+    <my-select :type="'page'" :optionList="pages"></my-select>
 
     <div class="day-and-night">
       <i class="fas fa-sun"></i>
@@ -25,11 +19,30 @@
 </template>
 
 <script>
+import MySelect from '../MySelect';
+
 export default {
   name: 'ReadingTop',
+  components: {
+    MySelect
+  },
   data () {
     return {
       msg: 'Chapters',
+      chapters: [{
+        name: 'Chepter 1',
+      },{
+        name: 'Chepter 2'
+      }],
+      pages: [{
+        name: 'Page 1',
+      },{
+        name: 'Page 2'
+      },{
+        name: 'Page 3'
+      },{
+        name: 'Page 4'
+      }],
     }
   }
 }

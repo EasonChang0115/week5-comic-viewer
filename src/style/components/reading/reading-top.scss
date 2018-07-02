@@ -21,6 +21,12 @@
     &.page-select {
       border-left: none;
     }
+    option {
+      &:hover {
+        background-color: $color-black;
+        color: $color-yellow;
+      }
+    }
   }
   .day-and-night {
     margin-left: auto;
