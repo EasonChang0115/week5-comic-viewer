@@ -10,8 +10,8 @@
     <div class="day-and-night">
       <i class="fas fa-sun"></i>
       <div class="switch-dark">
-        <label for="switch-dark"></label>
         <input type="checkbox" name="" id="switch-dark">
+        <label for="switch-dark"></label>
       </div>
       <i class="far fa-moon"></i>
     </div>
@@ -35,13 +35,13 @@ export default {
         name: 'Chepter 2'
       }],
       pages: [{
-        name: 'Page 1',
+        name: 'Page 01',
       },{
-        name: 'Page 2'
+        name: 'Page 02'
       },{
-        name: 'Page 3'
+        name: 'Page 03'
       },{
-        name: 'Page 4'
+        name: 'Page 04'
       }],
     }
   }
