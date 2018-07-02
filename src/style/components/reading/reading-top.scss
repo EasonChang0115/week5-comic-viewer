@@ -3,7 +3,28 @@
 .reading-top {
   width: 100%;
   max-width: 640px;
-  background-color: rgba(blue, 0.2);
-  margin-right: auto;
-  margin-left: auto;
+  margin: 24px auto;
+  line-height: 35px;
+  display: flex;
+  .fa-caret-right {
+    display: inline-block;
+    line-height: 35px;
+    padding: 0px 8px;
+  }
+  select {
+    width: 127px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid $color-black;
+    outline: none;
+    padding: 4px 16px;
+    &.page-select {
+      border-left: none;
+    }
+  }
+  .day-and-night {
+    margin-left: auto;
+    display: flex;
+  }
+  
 }
