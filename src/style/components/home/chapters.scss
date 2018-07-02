@@ -1,0 +1,58 @@
+@import '../../all.scss';
+
+.chapters {
+  width: 100%;
+  max-width: 640px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-right: auto;
+  margin-left: auto;
+  .title2 {
+    display: inline-block;
+    background-color: $color-black;
+    color: $color-white;
+    padding: 8px 24px;
+  }
+  .chapter-box {
+    border: 4px solid $color-black;
+    padding: 7px 0px;
+    overflow: auto;
+    * {
+      white-space: nowrap;
+    }
+    .chapter {
+      width: 100%;
+      padding: 15px 24px;
+      display: flex;
+      cursor: pointer;
+      transition: .3s;
+      .sub-title {
+        height: 24px;
+        line-height: 24px;
+      }
+      &:last-child {
+        margin: 0;
+      }
+      .chapter-new {
+        display: inline-block;
+        background-color: $color-yellow;
+        padding: 2px 12px;
+        margin-left: 16px;
+        color: $color-black;
+      }
+      &:hover,&:focus {
+        background-color: $color-black;
+        color: white;
+      }
+      @media screen and (max-width: $media-size-ipad) {
+        flex-wrap: wrap;
+        .chapter-new {
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $media-size-ipad) {
+    padding: 0px 15px;
+  }
+}

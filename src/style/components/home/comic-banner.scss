@@ -1,0 +1,54 @@
+@import '../../all.scss';
+
+.comic-banner {
+  width: 100%;
+  max-width: 640px;
+  margin-top: 28px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  .comic-image {
+    width: 300px;
+    border: 4px solid $color-black;
+  }
+  .information {
+    width: calc(100% - 300px);
+    .title {
+      color: $color-white;
+      background-color: $color-black;
+      padding: 8px;
+      text-align: center;
+    }
+    .infors {
+      padding: 16px 24px;
+      .attr {
+        display: flex;
+        margin-bottom: 8px;
+        height: 24px;
+        .sub-title {
+          width: 72px;
+        }
+      }
+      .start {
+        margin-right: 10px;
+      }
+    }
+    .description {
+      padding-left: 24px;
+      .sub-title {
+        margin-bottom: 8px;
+      }
+    }
+  }
+  @media screen and (max-width: $media-size-ipad) {
+    padding: 0px 15px;
+    .comic-image {
+      width: 100%;
+    }
+    .information {
+      width: 100%;
+    }
+  }
+}
