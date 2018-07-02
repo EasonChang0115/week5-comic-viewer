@@ -34,4 +34,18 @@
   .next-button {
     right: -80px;
   }
+  @media screen and (max-width: $media-size-ipad){
+    .pre-button,.next-button {
+      &:hover {
+        background-color: rgba($color-black,0.3);
+      }
+      
+    }
+    .pre-button {
+      left: 0px;
+    }
+    .next-button {
+      right: 0px;
+    }
+  }
 }
