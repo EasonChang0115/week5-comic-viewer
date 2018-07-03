@@ -12,6 +12,7 @@
   .comic-image {
     width: 300px;
     border: 4px solid $color-black;
+    font-size: 0;
   }
   .information {
     width: calc(100% - 300px);
