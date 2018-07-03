@@ -30,15 +30,15 @@ export default {
        ad: [{
         id: 0,
         url: 'https://vuejs.org/',
-        img: '../../static/images/ad/ad-1.png'
+        img: './static/images/ad/ad-1.png'
       },{
         id: 0,
         url: 'https://getbootstrap.com/',
-        img: '../../static/images/ad/ad-2.png'
+        img: './static/images/ad/ad-2.png'
       },{
         id: 0,
         url: 'https://www.w3schools.com/html/html5_intro.asp',
-        img: '../../static/images/ad/ad-3.png'
+        img: './static/images/ad/ad-3.png'
       }]
     }
   },
