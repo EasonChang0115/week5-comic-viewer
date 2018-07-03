@@ -17,6 +17,8 @@ export default new Router({
       name: 'Reading',
       component: Reading
     }
-
-  ]
+  ],
+  scrollBehavior() {
+    return {x: 0, y: 0};
+  }
 })
