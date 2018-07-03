@@ -21,7 +21,7 @@
     <div class="day-and-night">
       <i class="fas fa-sun"></i>
       <div class="switch-dark">
-        <input type="checkbox" name="" id="switch-dark">
+        <input type="checkbox" id="switch-dark" v-model="isLocalNight">
         <label for="switch-dark"></label>
       </div>
       <i class="far fa-moon"></i>
@@ -38,14 +38,22 @@ export default {
   components: {
     MySelect
   },
-  data () {
-    return {}
-  },
   computed: {
-    ...mapState('chapters',['chapters', 'nowChapter', 'nowPage'])
+    ...mapState('chapters',['chapters', 'nowChapter', 'nowPage']),
+    ...mapState('night',['isNight']),
+    isLocalNight: {
+      get() {
+        return this.isNight;
+      },
+      set() {
+        this.SWITCH_NIGHT();
+      }
+    }
+
   },
   methods: {
-    ...mapMutations('chapters',['CHANGE_CHAPTER', 'CHANGE_PAGE'])
+    ...mapMutations('chapters',['CHANGE_CHAPTER', 'CHANGE_PAGE']),
+    ...mapMutations('night',['SWITCH_NIGHT']),
   }
 }
 </script>

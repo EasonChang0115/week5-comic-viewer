@@ -1,10 +1,12 @@
+import * as types from '../mutation-types';
+
 const night = {
   namespaced: true,
   state: {
     isNight: false
   },
   mutations: {
-    switchNight(state){
+    [types.SWITCH_NIGHT] (state){
       state.isNight = !state.isNight;
     }
   }

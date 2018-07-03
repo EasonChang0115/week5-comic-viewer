@@ -56,11 +56,11 @@
       cursor: pointer;
       &.now {
         background-color: $color-black;
-        color: white;
+        color: $color-yellow;
       }
       &:hover {
         background-color: $color-black;
-        color: $color-yellow;
+        color: white;
       }
     }
   }
