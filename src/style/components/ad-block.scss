@@ -1,0 +1,16 @@
+@import '../all.scss';
+
+.ad-block {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  margin-right: auto;
+  margin-left: auto;
+  i {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 3;
+    cursor: pointer;
+  }
+}
