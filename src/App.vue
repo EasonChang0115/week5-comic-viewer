@@ -25,6 +25,7 @@ export default {
   background-color: rgba(0, 0, 0, 0.1);
   padding-bottom: 32px;
   transition: .3s;
+  overflow: auto;
 }
 #app.night {
   background-color: black;

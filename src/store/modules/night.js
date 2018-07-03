@@ -8,6 +8,9 @@ const night = {
   mutations: {
     [types.SWITCH_NIGHT] (state){
       state.isNight = !state.isNight;
+    },
+    [types.CLOSE_NIGHT] (state){
+      state.isNight = false;
     }
   }
 }

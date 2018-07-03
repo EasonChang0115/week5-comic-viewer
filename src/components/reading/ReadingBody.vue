@@ -1,6 +1,9 @@
 <template>
-  <div class="reading-body" :class="isNight? 'night' : ''">
-    <div class="comic-imgae">
+  <div class="reading-body" :class="{night: isNight, fullscreen: isFullScreen}">
+    <div class="comic-imgae" @dblclick="toggleFullScreen">
+      <i class="far fa-times-circle" 
+      :class="{fullscreen: isFullScreen}"
+      @click="toggleFullScreen"></i>
       <img width="100%" :src="nowPagePath" alt="">
     </div>
     <div class="pre-button" @click="changePage(-1)"><i class="fas fa-angle-left"></i></div>
@@ -12,10 +15,10 @@
 import { mapState, mapMutations } from 'vuex';
 
 export default {
-  name: 'ReadingTop',
+  name: 'ReadingBody',
   data () {
     return {
-      msg: 'Chapters',
+      isFullScreen: false,
     }
   },
   computed: {
@@ -32,6 +35,9 @@ export default {
       let nowPage = this.nowPage;
       nowPage = nowPage + num;
       this.CHANGE_PAGE({index: nowPage});
+    },
+    toggleFullScreen() {
+      this.isFullScreen = !this.isFullScreen;
     }
   }
 }

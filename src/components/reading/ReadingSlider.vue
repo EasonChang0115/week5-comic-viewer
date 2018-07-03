@@ -34,7 +34,7 @@
 import { mapState, mapMutations } from 'vuex';
 
 export default {
-  name: 'ReadingTop',
+  name: 'ReadingSlider',
   data () {
     return {
       position: 0,

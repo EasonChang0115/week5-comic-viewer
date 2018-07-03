@@ -1,6 +1,6 @@
 <template>
   <div class="reading-top" :class="isNight? 'night' : ''">
-    <div class="title3">My Hexschool</div>
+    <router-link to="/" class="title3">My Hexschool</router-link>
     <i class="fas fa-caret-right"></i>
 
     <div class="select-box">
