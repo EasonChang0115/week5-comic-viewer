@@ -1,5 +1,5 @@
 <template>
-  <div class="reading-body">
+  <div class="reading-body" :class="isNight? 'night' : ''">
     <div class="comic-imgae">
       <img width="100%" :src="nowPagePath" alt="">
     </div>
@@ -20,6 +20,7 @@ export default {
   },
   computed: {
     ...mapState('chapters',['chapters', 'nowChapter', 'nowPage']),
+    ...mapState('night',['isNight']),
     nowPagePath() {
       let nowChapterPages = this.chapters[this.nowChapter].pages;
       return nowChapterPages[this.nowPage].url;

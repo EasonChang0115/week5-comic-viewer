@@ -1,5 +1,5 @@
 <template>
-  <div class="reading-top">
+  <div class="reading-top" :class="isNight? 'night' : ''">
     <div class="title3">My Hexschool</div>
     <i class="fas fa-caret-right"></i>
 
@@ -19,12 +19,14 @@
     </div>
 
     <div class="day-and-night">
-      <i class="fas fa-sun"></i>
+      <i class="fas fa-sun day"></i>
+      <i class="far fa-sun night"></i>
       <div class="switch-dark">
         <input type="checkbox" id="switch-dark" v-model="isLocalNight">
         <label for="switch-dark"></label>
       </div>
-      <i class="far fa-moon"></i>
+      <i class="far fa-moon day"></i>
+      <i class="fas fa-moon night"></i>
     </div>
   </div>
 </template>

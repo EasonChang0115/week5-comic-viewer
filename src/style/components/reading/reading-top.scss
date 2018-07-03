@@ -24,6 +24,9 @@
       align-items: center;
       margin: 0px 8px;
     }
+    i.night {
+      display: none;
+    }
     input[type^="checkbox"] {
       display: none;
       &:checked {
@@ -61,6 +64,24 @@
       width: 100%;
       justify-content: center;
       order: 1;
+    }
+  }
+}
+
+.reading-top.night {
+  .title3,.fa-caret-right {
+    color: $color-white;
+  }
+  .day-and-night {
+    label {
+      border: 2px solid $color-white;
+    }
+    i.day {
+      display: none;
+    }
+    i.night {
+      display: block;
+      color: white;
     }
   }
 }

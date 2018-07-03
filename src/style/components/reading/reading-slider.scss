@@ -6,7 +6,6 @@
   margin-right: auto;
   margin-left: auto;
   margin-top: 16px;
-  margin-bottom: 32px;
   display: flex;
   flex-wrap: wrap;
   .slider {
@@ -29,6 +28,7 @@
     .num {
       font-size: 14px;
       font-weight: bold;
+      color: $color-black;
       width: 100%;
       text-align: center;
       vertical-align: bottom;
@@ -56,13 +56,13 @@
         }
         &:before{
           border-color: rgba(194, 225, 245, 0);
-          border-bottom-color: $color-black;;
+          border-bottom-color: $color-black;
           border-width: 4px;
           margin-left: -4px;
         }
         &:after{
           border-color: rgba(136, 183, 213, 0);
-          border-bottom-color: $color-black;;
+          border-bottom-color: $color-black;
           border-width: 10px;
           margin-left: -10px;
         }
@@ -171,6 +171,37 @@
       width: 80px;
       height: 12px;
       background-color: $color-black;
+    }
+  }
+}
+
+.reading-slider.night {
+  .comic-imgs {
+    .num {
+      color: $color-white;
+    }
+    .img {
+      &.nowComic{
+        border: 3px solid $color-yellow;
+        &:before{
+          border-bottom-color: $color-yellow;
+        }
+        &:after{
+          border-bottom-color: $color-yellow;
+        }
+
+      }
+    }
+  }
+  .scroll {
+    border-top: 4px solid $color-white;
+    border-bottom: 4px solid $color-white;
+    .scroll-box {
+      background-color: $color-white;
+    }
+    .pre,.next{
+      background-color: $color-white;
+      color: black;
     }
   }
 }

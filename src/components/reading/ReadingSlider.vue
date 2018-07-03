@@ -1,5 +1,5 @@
 <template>
-  <div class="reading-slider">
+  <div class="reading-slider" :class="isNight? 'night' : ''">
     <div class="slider">
       <div class="inner-slider" :style="{left: `${position}px`}">
         <div class="comic-imgs" v-for="(page, index) in localChapterPages" 
@@ -43,6 +43,7 @@ export default {
   },
   computed: {
     ...mapState('chapters',['chapters', 'nowChapter', 'nowPage']),
+    ...mapState('night',['isNight']),
     localChapterPages() {
       return this.chapters[this.nowChapter].pages;
     },
