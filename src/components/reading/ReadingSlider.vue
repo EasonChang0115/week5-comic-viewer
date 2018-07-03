@@ -78,6 +78,10 @@ export default {
         this.position = (this.nowPage - centerNum) * -100;
       }
       this.scrollpostion = this.nowPage * 100;
+    },
+    nowChapter() {
+      this.position = 0;
+      this.scrollpostion = 0;
     }
   }
 }

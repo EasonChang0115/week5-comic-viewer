@@ -24,7 +24,9 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$route.params.chapter)
+    this.$store.commit('chapters/CHANGE_CHAPTER',
+      {index: this.$route.params.chapter - 1}
+    );
   }
 }
 </script>
