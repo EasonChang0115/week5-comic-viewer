@@ -1,21 +1,16 @@
-# week5
+前端精神修練時光屋第五周  Comic Viewer
+A Vue.js project
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
+建置步驟
+# 安裝相關套件
 npm install
 
-# serve with hot reload at localhost:8080
+# 開發模式hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
+# 打包
 npm run build
+使用到的技術 vue vue-router scss vuex
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+透過這次的練習 也更深入理解vuex的使用方式 以及一些component的製作
+畢竟是練習 所以才不使用套件 純自己手刻 希望能在更進步
