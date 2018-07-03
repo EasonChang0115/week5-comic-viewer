@@ -1,17 +1,17 @@
 <template>
   <div class="my-select" :class="type">
     <button @click="switchOptions">
-      {{ optionList[selected].name }}
+      {{ realOptionList[now] }}
     </button>
     <div class="arrow"  @click="switchOptions">
       <i class="fas fa-sort-up"></i>
       <i class="fas fa-sort-down"></i>
     </div>
     <div :class="isVisible ? 'options visible' : 'options' ">
-      <div class="option" v-for="(option, index) in optionList"
+      <div class="option" v-for="(option, index) in realOptionList"
         :key="index"
-        :class="selected === index ? 'now' : ''" 
-        @click="changeSelect(index)">{{ option.name }}</div>
+        :class="now === index ? 'now' : ''" 
+        @click="changeSelect(index)">{{ option }}</div>
     </div>
   </div>
 </template>
@@ -19,10 +19,9 @@
 <script>
 export default {
   name: 'MySelect',
-  props: ['type', 'optionList'],
+  props: ['type', 'optionList', 'dosomethingFunc', 'now'],
   data() {
     return {
-      selected: 0,
       isVisible: false
     }
   },
@@ -33,15 +32,40 @@ export default {
       }
     })
   },
+  computed: {
+    realOptionList() {
+      if(this.type === 'chapter') {
+        let newArray = [];
+        this.optionList.forEach((item,index)=>{
+          newArray.push('Chapter ' + (index+1));
+        });
+        return newArray;
+      }
+      if(this.type === 'page') {
+        let newArray = [];
+        this.optionList.forEach((item,index)=>{
+          let snum = this.pendingNumber(index + 1)
+          newArray.push('Page ' + snum);
+        });
+        return newArray;
+      }
+    }
+  },
   methods: {
     switchOptions() {
       this.isVisible = !this.isVisible;
     },
     changeSelect(index) {
-      if(index === this.selected) return
-      this.selected = index;
+      if(index === this.now) return
+      this.dosomethingFunc({index});
       this.switchOptions();
-    }
+    },
+    pendingNumber(num) {
+      if(num.toString().length === 1) {
+        return  '0' + num.toString();
+      }
+      return num.toString();;
+    },
   }
 }
 </script>

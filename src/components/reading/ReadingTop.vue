@@ -4,8 +4,18 @@
     <i class="fas fa-caret-right"></i>
 
     <div class="select-box">
-      <my-select :type="'chapter'" :optionList="chapters"></my-select>
-      <my-select :type="'page'" :optionList="pages"></my-select>
+      <my-select 
+        :type="'chapter'" 
+        :optionList="chapters"
+        :now="nowChapter"
+        :dosomethingFunc="CHANGE_CHAPTER">
+      </my-select>
+      <my-select 
+        :type="'page'" 
+        :optionList="chapters[nowChapter].pages"
+        :now="nowPage"
+        :dosomethingFunc="CHANGE_PAGE">
+      </my-select>
     </div>
 
     <div class="day-and-night">
@@ -21,6 +31,7 @@
 
 <script>
 import MySelect from '../MySelect';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
   name: 'ReadingTop',
@@ -28,23 +39,13 @@ export default {
     MySelect
   },
   data () {
-    return {
-      msg: 'Chapters',
-      chapters: [{
-        name: 'Chepter 1',
-      },{
-        name: 'Chepter 2'
-      }],
-      pages: [{
-        name: 'Page 01',
-      },{
-        name: 'Page 02'
-      },{
-        name: 'Page 03'
-      },{
-        name: 'Page 04'
-      }],
-    }
+    return {}
+  },
+  computed: {
+    ...mapState('chapters',['chapters', 'nowChapter', 'nowPage'])
+  },
+  methods: {
+    ...mapMutations('chapters',['CHANGE_CHAPTER', 'CHANGE_PAGE'])
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="comic-banner">
     <div class="comic-image">
-      <img width="100%" src="../../assets/images/comic cover.png" alt="">
+      <img width="100%" src="../../../static/images/comic cover.png" alt="">
     </div>
     <div class="information">
       <div class="title">MY HEXSCHOOL</div>
