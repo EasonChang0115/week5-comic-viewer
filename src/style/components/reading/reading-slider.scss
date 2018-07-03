@@ -6,8 +6,9 @@
   margin-right: auto;
   margin-left: auto;
   margin-top: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   display: flex;
+  flex-wrap: wrap;
   .slider {
     display: flex; 
     overflow: hidden;
@@ -31,7 +32,7 @@
       width: 100%;
       text-align: center;
       vertical-align: bottom;
-      &.now {
+      &.hide {
         visibility: hidden;
       }
     }
@@ -41,7 +42,7 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
-      &.now{
+      &.nowComic{
         border: 3px solid $color-black;
         &:before,&:after{
           bottom: 103%;
@@ -83,7 +84,7 @@
     position: absolute;
     height: 120px;
     width: 40px;
-    bottom: 0;
+    top: 16px;
     background-color: $color-gray;
     color: transparent;
     cursor: pointer;
@@ -141,5 +142,35 @@
   }
   .next-button {
     right: 0px;
+  }
+  .scroll {
+    width: 100%;
+    margin-top: 16px;
+    border-top: 4px solid $color-black;
+    border-bottom: 4px solid $color-black;
+    overflow: hidden;
+    .pre,.next{
+      position: absolute;
+      top: 0px;
+      width: 40px;
+      height: 12px;
+      background-color: $color-black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 3;
+    }
+    .pre{
+      left: 0;
+    }
+    .next{
+      right: 0;
+    }
+    .scroll-box {
+      width: 80px;
+      height: 12px;
+      background-color: $color-black;
+    }
   }
 }
