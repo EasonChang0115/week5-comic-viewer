@@ -43,6 +43,8 @@ const chapters = {
   },
   mutations: {
     [types.CHANGE_CHAPTER] (state, {index}) {
+      if(index > state.chapters.length - 1 
+        || index < 0){ return }
       state.nowChapter = index;
       state.nowPage = 0;
     },

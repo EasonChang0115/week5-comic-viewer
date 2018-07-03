@@ -7,20 +7,23 @@
   margin-left: auto;
   margin-top: 16px;
   margin-bottom: 16px;
-  overflow: hidden;
   display: flex;
   .slider {
-    display: flex;
+    display: flex; 
+    overflow: hidden;
+    .inner-slider {
+      display: flex;
+    }
   }
   .comic-imgs {
     width: 80px;
     min-width: 80px;
     margin: 0px 10px;
     &:last-child {
-      margin-right: 50px;
+      margin-right: 0px;
     }
     &:first-child {
-      margin-left: 50px;
+      margin-left: 0px;
     }
     .num {
       font-size: 14px;
@@ -38,10 +41,8 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
-      filter: grayscale(100%);
       &.now{
         border: 3px solid $color-black;
-        filter: grayscale(0);
         &:before,&:after{
           bottom: 103%;
           left: 50%;
@@ -94,6 +95,45 @@
     &:hover {
       background-color: $color-yellow;
       color: $color-black;
+      .text {
+        visibility: visible;
+      }
+    }
+    .text {
+      position: absolute;
+      top: -65px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+      font-weight: bold;
+      color: $color-black;
+      background-color: $color-yellow;
+      padding: 10px;
+      white-space: nowrap;
+      visibility: hidden;
+      &:before,&:after{
+        top: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+      &:before{
+        border-color: rgba(194, 225, 245, 0);
+        border-top-color: $color-yellow;
+        border-width: 10px;
+        margin-left: -10px;
+      }
+      &:after{
+        border-color: rgba(136, 183, 213, 0);
+        border-top-color: $color-yellow;
+        border-width: 4px;
+        margin-left: -4px;
+      }
+
     }
   }
   .pre-button {
